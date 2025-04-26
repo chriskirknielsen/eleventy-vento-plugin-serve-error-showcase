@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"dev": "npx @11ty/eleventy --serve --quiet --incremental --port=1313",
 		"devall": "npx @11ty/eleventy --serve --port=1313",
