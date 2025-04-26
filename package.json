@@ -1,0 +1,20 @@
+{
+	"name": "11ty-vento",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "npx @11ty/eleventy --serve --quiet --incremental --port=1313",
+		"devall": "npx @11ty/eleventy --serve --port=1313",
+		"netlify": "netlify dev",
+		"debug": "DEBUG=Eleventy* npx @11ty/eleventy --dryrun",
+		"build": "npx @11ty/eleventy",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "chriskirknielsen",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0",
+		"eleventy-plugin-vento": "^4.2.0"
+	}
+}
