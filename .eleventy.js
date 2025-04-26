@@ -9,7 +9,10 @@ const layoutsDir = `${includesDir}/layouts`; // Layouts folder
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
 	//* Shortcodes
-	eleventyConfig.addPairedShortcode('alphabet', function (content) {
+	eleventyConfig.addPairedShortcode('alphagroup', function (content) {
+		return `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(2ch, 1fr)); gap: 1em;">${content}</div>`;
+	});
+	eleventyConfig.addPairedShortcode('lettergroup', function (content) {
 		return `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(2ch, 1fr)); gap: 1em;">${content}</div>`;
 	});
 	eleventyConfig.addShortcode('letter', function (content) {
