@@ -4,10 +4,6 @@ layout: 'base.vto'
 title: Testing
 ---
 
-<p>Hello world.</p>
-
-{{ alphabet }}
-    {{ letter "a" }}
-    {{ letter "b" }}
-    {{ letter "c" }}
-{{ /alphabet }}
+{{ renderTemplate 'md' }}
+# Hello world.
+{{ /renderTemplate }}
