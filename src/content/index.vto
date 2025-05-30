@@ -4,6 +4,25 @@ layout: 'base.vto'
 title: Testing
 ---
 
-{{ renderTemplate 'md' }}
-# Hello world.
-{{ /renderTemplate }}
+{{ echo |> markdown }}
+```css
+:root { block-size: 100%; }
+```
+{{ /echo }}
+
+{{# Comment the block below out to verify it works #}}
+{{ echo |> markdown }}
+```js
+function foo(a, b, c) {
+    return a + b - c;
+}
+```
+{{ /echo }}
+
+{{ echo |> markdown }}
+```js
+const foo = (a, b, c) => {
+    return a + b - c;
+}
+```
+{{ /echo }}
