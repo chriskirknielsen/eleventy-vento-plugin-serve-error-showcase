@@ -6,10 +6,13 @@
     <title>{{ title }}</title>
 </head>
 <body>
-    {{ include "parts/header.vto" }}
+    {% include "parts/header.njk" %}
     <main>
         <h1>{{ title }}</h1>
-        {{ content }}
+        {{ content | safe }}
     </main>
+    <nav>
+        {{ content | toTOC }}
+    </nav>
 </body>
 </html>

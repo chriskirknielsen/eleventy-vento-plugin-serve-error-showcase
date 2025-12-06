@@ -1,7 +1,6 @@
 //* Imports
 import markdownIt from 'markdown-it';
 import { EleventyRenderPlugin } from '@11ty/eleventy';
-import { VentoPlugin } from 'eleventy-plugin-vento';
 
 const rootDir = 'src'; // Root folder
 const outputDir = '_site'; // Build destination folder
@@ -12,8 +11,11 @@ const md = new markdownIt({ html: true, breaks: true, linkify: true }).disable('
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
 	eleventyConfig.addFilter('markdown', (content) => md.render(content));
+	eleventyConfig.addFilter('toTOC', (content) => {
+		console.log(content);
+		return content;
+	});
 	eleventyConfig.addPlugin(EleventyRenderPlugin, { accessGlobalData: true });
-	eleventyConfig.addPlugin(VentoPlugin);
 
 	eleventyConfig.setServerOptions({
 		domDiff: false,
@@ -21,8 +23,8 @@ export default async function (eleventyConfig) {
 
 	return {
 		pathPrefix: '/',
-		markdownTemplateEngine: 'vto',
-		htmlTemplateEngine: 'vto',
+		markdownTemplateEngine: 'njk',
+		htmlTemplateEngine: 'njk',
 		passthroughFileCopy: true,
 		dir: {
 			input: rootDir,
